@@ -1,0 +1,5 @@
+create table employee(name varchar(20),salary int,department varchar(50));
+insert into employee values('Fasil',98000,'MCA'),('Aparna',40000,'MCA'),('Huda',45000,'BCA'),('Fahiz',70000,'NULL');
+select * from employee where salary > (select avg(salary) from employee);
+select name,max(salary) from employee group by department;
+select * from employee where salary>(select avg(salary) from employee where department="MCA");
